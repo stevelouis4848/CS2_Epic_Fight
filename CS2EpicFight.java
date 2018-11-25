@@ -43,10 +43,26 @@ public class CS2EpicFight {
 	        ruffus_Moves[i][1] = input.nextInt();
 	    }
 	    
-	    // Run the algorithm and print the output
-	    System.out.print(Algo());
-    }
+	    // Debugging input reading
+	    System.out.print("fight duration: " + fight_Duration + "\n");
+        System.out.print("xorvier number of moves: " + xorvier_Num_Moves + "\n");
+        System.out.print("xorvier moves\n");
+        for(int i  =  0; i <  xorvier_Num_Moves; i++){
     
+	       System.out.print( xorvier_Moves[i][0] +  xorvier_Moves[i][1] + "\n");
+	    }
+
+        System.out.print("ruffus number of moves: " + ruffus_Num_Moves + "\n");
+        System.out.print("ruffus moves\n");
+        for(int i  =  0; i < ruffus_Num_Moves; i++){
+    
+	       System.out.print( ruffus_Moves[i][0] + ruffus_Moves[i][1] + "\n");
+	    }
+	    
+	    // Run the algorithm and print the output
+	   // System.out.print(Algo());
+	    
+    }
 
 	public static int Algo(){
 		// Take the time that the fight took divided by 2 and get number of moves each
