@@ -1,10 +1,11 @@
 package Main_Code;
 
 import java.util.Scanner;
+import java.io.*;
 
 public class CS2EpicFight {
 	
-	Scanner input = new Scanner();
+	public static Scanner input = new Scanner(System.in);
 	
 	public static int fight_Duration;
 	public static int xorvier_Num_Moves;
@@ -14,7 +15,7 @@ public class CS2EpicFight {
 	public static int[][] xorvier_Moves;
 	public static int[][] ruffus_Moves;
 	
-	public void main(){
+	 public static void main(String[] args){
 	    
         // Read in fight duration
 	    fight_Duration = input.nextInt();
@@ -42,22 +43,26 @@ public class CS2EpicFight {
 	        ruffus_Moves[i][0] = input.nextInt();
 	        ruffus_Moves[i][1] = input.nextInt();
 	    }
-	    
+	    /*
 	    // Debugging input reading
-	    System.out.print("fight duration: " + fight_Duration + "\n");
-        System.out.print("xorvier number of moves: " + xorvier_Num_Moves + "\n");
-        System.out.print("xorvier moves\n");
+	    System.out.print(fight_Duration + "\n");
+        System.out.print(xorvier_Num_Moves + " ");
+        System.out.print(xorvier_Init_Stamina + "\n");
+     
         for(int i  =  0; i <  xorvier_Num_Moves; i++){
     
-	       System.out.print( xorvier_Moves[i][0] +  xorvier_Moves[i][1] + "\n");
+	       System.out.print(xorvier_Moves[i][0] + " ");
+	       System.out.print(xorvier_Moves[i][1] + "\n");
 	    }
 
-        System.out.print("ruffus number of moves: " + ruffus_Num_Moves + "\n");
-        System.out.print("ruffus moves\n");
+        System.out.print(ruffus_Num_Moves + " ");
+        System.out.print(ruffus_Init_Stamina + "\n");
         for(int i  =  0; i < ruffus_Num_Moves; i++){
     
-	       System.out.print( ruffus_Moves[i][0] + ruffus_Moves[i][1] + "\n");
+	       System.out.print(ruffus_Moves[i][0] + " ");
+	       System.out.print(ruffus_Moves[i][1] + "\n");
 	    }
+	    */
 	    
 	    // Run the algorithm and print the output
 	   // System.out.print(Algo());
