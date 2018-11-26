@@ -13,6 +13,15 @@ public class CS2EpicFight {
 	public static int[][] xorvier_Moves;
 	public static int[][] ruffus_Moves;
 	
+	public static void State(){
+	   
+	    int xorvier_Stamina;
+	    int ruffus_Stamina;
+	    
+	    //arraylist of arraylist of size number of moves
+	    // 2d array but inside size is all the moves for that position by index. is not know outside size is the number of movrs
+	}
+	
 	 public static void main(String[] args){
 	    
         // Read in fight duration
@@ -53,7 +62,10 @@ public class CS2EpicFight {
     	int num_Moves_In_Fight;
     	int xorvier_Curr_Stamina;
     	int ruffus_Curr_Stamina;
-    	
+        int curr_State[][];
+        int health_Xorvier[];
+        int health_ruffus[];
+        
     	// The cost of the moves are instantenaous but the damages take 1 second.
     	// So the states would have to br checked after each move
     	// the amount of moves are the same just have to check and update states more often
@@ -63,7 +75,55 @@ public class CS2EpicFight {
 		
 		if( fight_Duration % 2  != 0 )
             num_Moves_In_Fight++;
-     
+            
+        // Structure to hold states 
+        
+        
+        for(int i = 0; i < number_Moves_In_Fight; i++){
+                
+            for(int j = 0; j < xorvier_Num_Moves; j++){
+                
+                // pick a move for xorvier
+                
+                
+                for(int k = 0; j < ruffus_Num_Moves; k++){
+                    
+                    // pick a move for ruffus
+                    
+                    // check if the state is possible if it is add it to our possible states
+                    
+                    if(i != number_Moves_In_Fight - 1){
+                        
+                        
+                    }
+                    else{
+                        
+                    }
+                }
+            }
+        }
+        
+      
+        
 		return 0;
+	}
+	
+	public static void Permute_Algo(int number_Moves, int current_Move, int number_Moves_Xorvier, int num_Moves_Ruffus){
+	   
+	    if(current_Move == number_Moves)
+	        return;
+	        
+	    
+       while(xavier_Current_Move <  number_Moves_Xorvier && ruffus_Number_Moves < num_Moves_Ruffus ){
+           
+           // choose a move for xavier
+           
+           
+           // choose a move for ruffus
+           
+           
+        }
+        
+        
 	}
 }
