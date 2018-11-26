@@ -1,5 +1,3 @@
-package Main_Code;
-
 import java.util.Scanner;
 import java.io.*;
 
@@ -43,39 +41,29 @@ public class CS2EpicFight {
 	        ruffus_Moves[i][0] = input.nextInt();
 	        ruffus_Moves[i][1] = input.nextInt();
 	    }
-	    /*
-	    // Debugging input reading
-	    System.out.print(fight_Duration + "\n");
-        System.out.print(xorvier_Num_Moves + " ");
-        System.out.print(xorvier_Init_Stamina + "\n");
-     
-        for(int i  =  0; i <  xorvier_Num_Moves; i++){
-    
-	       System.out.print(xorvier_Moves[i][0] + " ");
-	       System.out.print(xorvier_Moves[i][1] + "\n");
-	    }
-
-        System.out.print(ruffus_Num_Moves + " ");
-        System.out.print(ruffus_Init_Stamina + "\n");
-        for(int i  =  0; i < ruffus_Num_Moves; i++){
-    
-	       System.out.print(ruffus_Moves[i][0] + " ");
-	       System.out.print(ruffus_Moves[i][1] + "\n");
-	    }
-	    */
-	    
+	  
 	    // Run the algorithm and print the output
 	   // System.out.print(Algo());
 	    
     }
 
 	public static int Algo(){
-		// Take the time that the fight took divided by 2 and get number of moves each
-		// You need enough time for the hits to affect so
-		// Take possible moves to choose from and build a storage for the moves that get Ruffus defeated Xavier positive
-		//  Personal stamina cost is instantaneous 
-		// opponent stamina cost takes one second
-		// opponent stamina and moves take place at the same time except for time 0.
+	    
+	    int fight_Variations;
+    	int num_Moves_In_Fight;
+    	int xorvier_Curr_Stamina;
+    	int ruffus_Curr_Stamina;
+    	
+    	// The cost of the moves are instantenaous but the damages take 1 second.
+    	// So the states would have to br checked after each move
+    	// the amount of moves are the same just have to check and update states more often
+    	// the fight cannot end prematurely on picking a move but can end prematurely if the opponent cost to himself or you have no options
+		// Divide the length of the fight by 2 and round that up to get number of moves.
+		int num_Moves_In_Fight = fight_Duration / 2;
+		
+		if( fight_Duration % 2  != 0 )
+            num_Moves_In_Fight++;
+     
 		return 0;
 	}
 }
