@@ -1,0 +1,14 @@
+Check list
+
+	Completed 
+	
+		read in the inputs
+		number of moves
+
+	To-Do
+
+		gertting the total number of combinations
+		data structure for combinations
+		trimming down the combinations as we go along
+		data structure for states
+		then keep track of each successful combinations

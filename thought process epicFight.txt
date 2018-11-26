@@ -1,0 +1,88 @@
+/*
+            Algo ideas
+            
+            we need to see how many moves if xovier does one doe it give for possible ways he can win the fight
+            
+            instead of running every move maybe look for specific moves based on current stare
+            moves that will give you the state that you want..maybe
+            
+            so update state every second have a past move and a curr move
+            after a new move the curr move moves to past
+            
+            idea so if i run one move the next move 
+            
+            Data structure to hold the possible moves
+            dont do them as pairs or save them run on the go
+            
+            so each have a set of their moves that can be done given the number of moves(dont brute force)
+            
+            BRUTE FORCE
+                So have the set of all possible move that each can do
+                the total number of sets are number of movesPirate choose numberFight Move
+                
+                then take each individuals set and run the permutations between them
+                it would be the number in each times each other
+                
+                more like eeach set choose 1 so both are the number in the sets then
+                in total would be 
+                
+                then pick al permutations and 
+            
+            EFFICIENT ALGO
+                use states to rule out options 
+                states are the stamina of the players and how 
+                
+                dynamic programing
+                    keeping the answer of each move and using that to choose the next move
+                so pick one move if the move can be use then no need to run permutations with it in the same location 
+                only problem is the state is also dependent on the other character's move
+                factoring other charater's move
+                    keep the other player's move constant
+                    
+                so run both players with move [1][][] see the outcome if the state is still posible them continue
+                if the state is not possible then starting with [1][][]is not possible then update one to [2][][]
+                
+                so have an array for possible first moves 
+                
+                for(i = number of moves) {    
+                
+                    for(int i = number of moves xovier){
+                    
+                      pick a move for xavier
+                      
+                        for(int i = number of moves ruffus){
+                        
+                          pick a move for   ruffus
+                            
+                        }
+                        
+                    }
+                }
+                
+                for the first moves we need to pick one each so a for loop for each for the next move...k number of moves
+                
+                so for k moves wee need to pick two 1st moves wich loop.... to  k moves that also loop
+                
+                recursively with a state that is not recursive
+                    so a loop that choose from n moves fors first moves
+                    a recursive call that choose the next moves and breaks when something fails
+                    then the call goes back and the inner for loop increments
+                    
+                so a single for loop at each 
+                    
+                
+            
+            
+            so start with ruffus 1 and xorvier move 2
+            move one and update the cost and damage 
+        */
+	
+	    // Get all the combination of moves for both xavier and ruffus.
+	    
+		// Take possible moves to choose from and build a storage for the moves that get Ruffus defeated Xavier positive
+		
+		//  Personal stamina cost is instantaneous 
+		
+		// opponent stamina cost takes one second
+		
+		// opponent stamina and moves take place at the same time except for time 0.

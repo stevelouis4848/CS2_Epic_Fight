@@ -1,0 +1,23 @@
+ Reading in the inputs
+
+ /*
+	    // Debugging input reading
+	    System.out.print(fight_Duration + "\n");
+        System.out.print(xorvier_Num_Moves + " ");
+        System.out.print(xorvier_Init_Stamina + "\n");
+     
+        for(int i  =  0; i <  xorvier_Num_Moves; i++){
+    
+	       System.out.print(xorvier_Moves[i][0] + " ");
+	       System.out.print(xorvier_Moves[i][1] + "\n");
+	    }
+
+        System.out.print(ruffus_Num_Moves + " ");
+        System.out.print(ruffus_Init_Stamina + "\n");
+        for(int i  =  0; i < ruffus_Num_Moves; i++){
+    
+	       System.out.print(ruffus_Moves[i][0] + " ");
+	       System.out.print(ruffus_Moves[i][1] + "\n");
+	    }
+	    */
+	    
