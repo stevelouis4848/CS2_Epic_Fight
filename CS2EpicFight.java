@@ -17,40 +17,78 @@ public class CS2EpicFight {
 	   
 	    int xorvier_Stamina;
 	    int ruffus_Stamina;
+		int[] ruffus_Cost_Damage = new int[2];
+		int[] xorvier_Cost_Damage = new int[2];
 	    
-	    //arraylist of arraylist of size number of moves
-	    // 2d array but inside size is all the moves for that position by index. is not know outside size is the number of movrs
+		state(int a, int b, int c, int d){
+			
+			
+			ruffus_Cost_Damage[0] = a;
+			ruffus_Cost_Damage[1] = b;
+			
+			xorvier_Cost_Damage[0] = c;	
+			xorvier_Cost_Damage[1] = d;
+		}
 	}
 	
 	 public static void main(String[] args){
 	    
+		int ruffus_Cost_Damage;
+		int xorvier_Cost_Damage;
+		int[] intital_Ruffus_Cost;
+		int[] intital_xorvier_Cost;
+		int[] ruffus_Damage;
+		int[] xorvier_Damage
+		
+		
         // Read in fight duration
 	    fight_Duration = input.nextInt();
 	    
 	    // Read in Xovier info
 	    xorvier_Num_Moves = input.nextInt();
-	    xorvier_Init_Stamina =  input.nextInt();
+	    xorvier_Init_Stamina = input.nextInt();
 	    
 	    xorvier_Moves = new int[ xorvier_Num_Moves][2];
+		
+		State[][] move_Combinations;
+		
 	    
-	    for(int i  =  0; i <  xorvier_Num_Moves; i++){
+	    for(int i = 0; i < xorvier_Num_Moves; i++){
 	        
 	        xorvier_Moves[i][0] = input.nextInt();
 	        xorvier_Moves[i][1] = input.nextInt();
 	    }
 	    
-	    // Read in Ruffus info
+	    // Read in Rufus info
         ruffus_Num_Moves = input.nextInt();
-	    ruffus_Init_Stamina =  input.nextInt();
+	    ruffus_Init_Stamina = input.nextInt();
 	    
-	   ruffus_Moves = new int[ruffus_Num_Moves][2];
+		ruffus_Moves = new int[ruffus_Num_Moves][2];
 	    
-	    for(int i  =  0; i <  ruffus_Num_Moves; i++){
+	    for(int i = 0; i < ruffus_Num_Moves; i++){
 	        
 	        ruffus_Moves[i][0] = input.nextInt();
 	        ruffus_Moves[i][1] = input.nextInt();
 	    }
+		
+		// Calculating and storing the outcomes of all the 1 move combinations by themselves.
+		move_Combinations = new State[ruffus_Num_Moves][xorvier_Num_Moves];
 	  
+		for(int i = 0; i < ruffus_Num_Moves; i++){
+			
+			for(int j = 0; j < xorvier_Num_Moves; j++){
+				
+				ruffus_Cost_Damage_Second_0 =  ruffus_Moves[i][0];
+				ruffus_Cost_Damage_Second_1 =	
+				
+				xorvier_Cost_Damage_Second_0 =
+				xorvier_Cost_Damage_Second_1 =
+				
+				move_Combinations[i][j] = new State(int ruffus_Cost_Damage_Second_0, int ruffus_Cost_Damage_Second_0, 
+					int xorvier_Cost_Damage_Second_1, int xorvier_Cost_Damage_Second_1);
+			}
+		}
+		
 	    // Run the algorithm and print the output
 	   // System.out.print(Algo());
 	    
@@ -84,21 +122,13 @@ public class CS2EpicFight {
             for(int j = 0; j < xorvier_Num_Moves; j++){
                 
                 // pick a move for xorvier
-                
-                
+                             
                 for(int k = 0; j < ruffus_Num_Moves; k++){
                     
                     // pick a move for ruffus
                     
-                    // check if the state is possible if it is add it to our possible states
-                    
-                    if(i != number_Moves_In_Fight - 1){
-                        
-                        
-                    }
-                    else{
-                        
-                    }
+                    // Store the info of that move combination
+					
                 }
             }
         }
