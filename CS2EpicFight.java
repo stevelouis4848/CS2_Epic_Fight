@@ -17,17 +17,18 @@ public class CS2EpicFight {
 	   
 	    int xorvier_Stamina;
 	    int ruffus_Stamina;
-		int[] ruffus_Cost_Damage = new int[2];
-		int[] xorvier_Cost_Damage = new int[2];
+		int ruffus_Cost_Second_0;
+		int xorvier_Cost_Second_0;
+		int ruffus_Damage_Second_1;
+		int xorvier_Damage_Second_1;
 	    
 		state(int a, int b, int c, int d){
 			
+			ruffus_Cost_Second_0 = a;
+			xorvier_Cost_Second_0 = b;	
 			
-			ruffus_Cost_Damage[0] = a;
-			ruffus_Cost_Damage[1] = b;
-			
-			xorvier_Cost_Damage[0] = c;	
-			xorvier_Cost_Damage[1] = d;
+			ruffus_Damage_Second_1= c;
+			xorvier_Damage_Second_1 = d;
 		}
 	}
 	
@@ -73,19 +74,21 @@ public class CS2EpicFight {
 		
 		// Calculating and storing the outcomes of all the 1 move combinations by themselves.
 		move_Combinations = new State[ruffus_Num_Moves][xorvier_Num_Moves];
+		MovesToCost
 	  
+		// Stores the states of every move in term of stamina after 0 and 1 second.
 		for(int i = 0; i < ruffus_Num_Moves; i++){
 			
 			for(int j = 0; j < xorvier_Num_Moves; j++){
 				
-				ruffus_Cost_Damage_Second_0 =  ruffus_Moves[i][0];
-				ruffus_Cost_Damage_Second_1 =	
+				ruffus_Cost_Second_0 = ruffus_Moves[i][0];
+				xorvier_Cost_Second_0 = xorvier_Moves[j][0];
 				
-				xorvier_Cost_Damage_Second_0 =
-				xorvier_Cost_Damage_Second_1 =
+				ruffus_Damage_Second_1 = xorvier_Moves[j][1];			
+				xorvier_Damage_Second_1 = ruffus_Moves[i][1];
 				
-				move_Combinations[i][j] = new State(int ruffus_Cost_Damage_Second_0, int ruffus_Cost_Damage_Second_0, 
-					int xorvier_Cost_Damage_Second_1, int xorvier_Cost_Damage_Second_1);
+				move_Combinations[i][j] = new State(ruffus_Cost_Second_0, xorvier_Cost_Second_0, 
+					ruffus_Damage_Second_1, xorvier_Damage_Second_1);
 			}
 		}
 		
@@ -100,10 +103,13 @@ public class CS2EpicFight {
     	int num_Moves_In_Fight;
     	int xorvier_Curr_Stamina;
     	int ruffus_Curr_Stamina;
+		int xorvier_Temp_Stamina;
+    	int ruffus_Temp_Stamina;
         int curr_State[][];
         int health_Xorvier[];
         int health_ruffus[];
-        
+        int[] possible_Moves;
+		
     	// The cost of the moves are instantenaous but the damages take 1 second.
     	// So the states would have to br checked after each move
     	// the amount of moves are the same just have to check and update states more often
@@ -114,6 +120,7 @@ public class CS2EpicFight {
 		if( fight_Duration % 2  != 0 )
             num_Moves_In_Fight++;
             
+		possible_Moves = new int [num_Moves_In_Fight];
         // Structure to hold states 
         
         
@@ -136,24 +143,5 @@ public class CS2EpicFight {
       
         
 		return 0;
-	}
-	
-	public static void Permute_Algo(int number_Moves, int current_Move, int number_Moves_Xorvier, int num_Moves_Ruffus){
-	   
-	    if(current_Move == number_Moves)
-	        return;
-	        
-	    
-       while(xavier_Current_Move <  number_Moves_Xorvier && ruffus_Number_Moves < num_Moves_Ruffus ){
-           
-           // choose a move for xavier
-           
-           
-           // choose a move for ruffus
-           
-           
-        }
-        
-        
 	}
 }
