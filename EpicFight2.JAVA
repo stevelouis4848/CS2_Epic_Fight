@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.io.*;
 
-public class CS2EpicFight {
+public class Main {
 	
 	public static Scanner input = new Scanner(System.in);
 	
@@ -55,64 +55,67 @@ public class CS2EpicFight {
 	    }
 		
 		// Calculating and storing the outcomes of all the 1 move combinations by themselves.
-		states = new int[2][ruffus_Init_Stamina][xorvier_Init_Stamina];
+		states = new int[2][ruffus_Init_Stamina + 1][xorvier_Init_Stamina + 1];
 	    
 		// Stores the states of every move in term of stamina after 0 and 1 second.
 	
+	    for(int i = 0; i < ruffus_Num_Moves; i++){
+		    for(int j = 0; j < xorvier_Num_Moves; j++){
 		    
-		for(int j = 0; j < xorvier_Num_Moves; j++){
-		    
-		    ruffus_Curr_Stamina = ruffus_Init_Stamina - ruffus_Moves[i][0];
-		    xorvier_Curr_Stamina = xorvier_Curr_Stamina - xorvier_Moves[j][0];
-		
-		    if(ruffus_Curr_Stamina > ruffus_Init_Stamina)
-		        ruffus_Curr_Stamina = ruffus_Init_Stamina;
-		        
-		    if(xorvier_Curr_Stamina > xorvier_Init_Stamina)
-		        xorvier_Curr_Stamina = xorvier_Init_Stamina;
-		        
-		    if(ruffus_Curr_Stamina < 0)
-		        ruffus_Curr_Stamina = 0;
-		        
-		    if(xorvier_Curr_Stamina < 0)
-		        xorvier_Curr_Stamina = 0;
-		    
-            state[0][ruffus_Curr_Stamina][xorvier_Curr_Stamina]++;
-            
-            if(ruffus_Curr_Stamina > 0 && xorvier_Curr_Stamina > 0){
-            
-                ruffus_Curr_Stamina -= xorvier_Moves[j][1];
-                xorvier_Curr_Stamina -= ruffus_Moves[i][1];
+    		    ruffus_Curr_Stamina = ruffus_Init_Stamina - ruffus_Moves[i][0];
+    		    xorvier_Curr_Stamina = xorvier_Init_Stamina - xorvier_Moves[j][0];
+    		
+    		    if(ruffus_Curr_Stamina > ruffus_Init_Stamina)
+    		        ruffus_Curr_Stamina = ruffus_Init_Stamina;
+    		        
+    		    if(xorvier_Curr_Stamina > xorvier_Init_Stamina)
+    		        xorvier_Curr_Stamina = xorvier_Init_Stamina;
+    		        
+    		    if(ruffus_Curr_Stamina < 0)
+    		        ruffus_Curr_Stamina = 0;
+    		        
+    		    if(xorvier_Curr_Stamina < 0)
+    		        xorvier_Curr_Stamina = 0;
+    		    
+                states[0][ruffus_Curr_Stamina][xorvier_Curr_Stamina]++;
                 
-			    if(ruffus_Curr_Stamina > ruffus_Init_Stamina)
-			        ruffus_Curr_Stamina = ruffus_Init_Stamina;
-			        
-			    if(xorvier_Curr_Stamina > xorvier_Init_Stamina)
-			        xorvier_Curr_Stamina = xorvier_Init_Stamina;
-			        
-			    if(ruffus_Curr_Stamina < 0)
-			        ruffus_Curr_Stamina = 0;
-			        
-			    if(xorvier_Curr_Stamina < 0)
-			        xorvier_Curr_Stamina = 0;
+                if(ruffus_Curr_Stamina > 0 && xorvier_Curr_Stamina > 0){
                 
-            	if(ruffus_Curr_Stamina > 0 && xorvier_Curr_Stamina > 0){
-            	    
-            	    state[1][ruffus_Curr_Stamina][xorvier_Curr_Stamina]++;
-            	}
+                    ruffus_Curr_Stamina -= xorvier_Moves[j][1];
+                    xorvier_Curr_Stamina -= ruffus_Moves[i][1];
                     
-			}
+                    System.out.println("move[0]["+i+"]"+"["+j+"]: RS: "+ruffus_Curr_Stamina+" XS: "+xorvier_Curr_Stamina);
+                    
+    			    if(ruffus_Curr_Stamina > ruffus_Init_Stamina)
+    			        ruffus_Curr_Stamina = ruffus_Init_Stamina;
+    			        
+    			    if(xorvier_Curr_Stamina > xorvier_Init_Stamina)
+    			        xorvier_Curr_Stamina = xorvier_Init_Stamina;
+    			        
+    			    if(ruffus_Curr_Stamina < 0)
+    			        ruffus_Curr_Stamina = 0;
+    			        
+    			    if(xorvier_Curr_Stamina < 0)
+    			        xorvier_Curr_Stamina = 0;
+                    
+                	if(ruffus_Curr_Stamina > 0 && xorvier_Curr_Stamina > 0){
+                	    
+                	    states[1][ruffus_Curr_Stamina][xorvier_Curr_Stamina]++;
+                	    System.out.println("move[1]["+i+"]"+"["+j+"]: RS: "+ruffus_Curr_Stamina+" XS: "+xorvier_Curr_Stamina);
+                	}
+                        
+			}   }
 			
 		}
 		
-			// Stores the states of every move in term of stamina after 0 and 1 second.
+		System.out.print("number of ways to get to each stamina combo\n");
+		  
 		for(int h = 0; h < 2; h++){
     		for(int i = 0; i < ruffus_Init_Stamina; i++){
-    		    
     			for(int j = 0; j < xorvier_Init_Stamina; j++){
-    			    
-    			    System.out.print("number of ways to get to each stamina combo\n");
-    			    System.out.print("["+h+"]"+"["+i+"]"+"["+j+"]: "+ states[h][i][j]);
+    			    if(states[h][i][j] != 0){
+                        System.out.println("["+h+"]"+"["+i+"]"+"["+j+"]: "+ states[h][i][j]);
+    			    }
     			}
     		}
 		}
