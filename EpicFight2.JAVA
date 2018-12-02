@@ -21,7 +21,7 @@ public class CS2EpicFight {
 		int[] intital_Ruffus_Cost;
 		int[] intital_xorvier_Cost;
 		int[] ruffus_Damage;
-		int[] xorvier_Damage
+		int[] xorvier_Damage;
 		int[][][] states;
 		int ruffus_Curr_Stamina;
 		int xorvier_Curr_Stamina;
@@ -111,7 +111,7 @@ public class CS2EpicFight {
     		    
     			for(int j = 0; j < xorvier_Init_Stamina; j++){
     			    
-    			    System.out.print("number of ways to get to each stamina combo\n";
+    			    System.out.print("number of ways to get to each stamina combo\n");
     			    System.out.print("["+h+"]"+"["+i+"]"+"["+j+"]: "+ states[h][i][j]);
     			}
     		}
@@ -121,3 +121,4 @@ public class CS2EpicFight {
 	   // System.out.print(Algo());
 	    
     }
+}
